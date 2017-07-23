@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -50,6 +51,8 @@ MIDDLEWARE_CLASSES = [
 ]
 
 ROOT_URLCONF = 'hellomeltingpod.urls'
+
+TEMPLATE_DIRS = ("/var/www/html/test/templates",)
 
 TEMPLATES = [
     {
