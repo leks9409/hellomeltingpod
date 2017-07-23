@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf8"/>
+<meta charset="utf-8"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css"/>
 <style>
@@ -36,6 +36,14 @@
 
     {% block content %}
     {% endblock %}
+
+    <hr/>
+    {% if user.is_authenticated %}
+      {{ user }}
+      <a href="{% url "logout" %}?next=/">로그아웃</a>
+    {% else %}
+      <a href="{% url "login" %}">로그인</a>
+    {% endif %}
 
 </body>
 </html>
